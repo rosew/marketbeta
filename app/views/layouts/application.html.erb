@@ -25,12 +25,13 @@
       </div>
     </nav>
 
-    <div class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
-      <div id="flash">
-        <% flash.each do |key, value| %>
-          <div class="flash <%= key %>"><%= value %></div>
-        <% end %>
-      </div>
+    <div class="pa3 pa4-ns bt b--black-10 black-70 bg-white">
+
+      <% flash.each do |key, value| %>
+        <div class="flex items-center justify-center pa2 mb3 bg-light-gray navy">
+          <span class="lh-title ml3"><%= value %></span>
+        </div>
+      <% end %>
 
       <%= yield %>
     </div>
