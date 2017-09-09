@@ -4,24 +4,35 @@
     <title>Market Beta</title>
     <%= csrf_meta_tags %>
 
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.8.0/css/tachyons.min.css"/>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <% if signed_in? %>
-      Signed in as: <%= current_user.email %>
-      <%= button_to 'Sign out', sign_out_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Sign in', sign_in_path %>
-    <% end %>
+  <body class="w-100 sans-serif bg-white">
 
-    <div id="flash">
-      <% flash.each do |key, value| %>
-        <div class="flash <%= key %>"><%= value %></div>
-      <% end %>
+    <nav class="dt w-100 border-box pa2 ph5-ns">
+      <a class="dtc v-mid mid-gray link dim" href="http://www.parkside.io/" title="Home">
+        <%= image_tag "logo.jpg", class: "dib h3", alt: "Site Name" %>
+      </a>
+      <div class="dtc v-mid w-75 tr">
+        <% if signed_in? %>
+          <%= link_to 'Sign Out', sign_out_path, method: :delete, class: "link dim dark-gray f6 f5-ns dib" %>
+        <% else %>
+          <%= link_to 'Sign Up', sign_up_path, class: "link dim dark-gray f6 f5-ns dib mr3 mr4-ns" %>
+          <%= link_to 'Sign In', sign_in_path, class: "link dim dark-gray f6 f5-ns dib" %>
+        <% end %>
+      </div>
+    </nav>
+
+    <div class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
+      <div id="flash">
+        <% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+        <% end %>
+      </div>
+
+      <%= yield %>
     </div>
-
-    <%= yield %>
   </body>
 </html>

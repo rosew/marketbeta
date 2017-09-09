@@ -1,0 +1,20 @@
+<div id="clearance" class="password-reset">
+
+  <%= form_for :password_reset,
+        url: user_password_path(@user, token: @user.confirmation_token),
+        html: { method: :put, class: 'measure center' } do |form| %>
+
+    <fieldset id="password_reset" class="ba b--transparent ph0 mh0">
+      <legend class="f4 fw6 ph0 mh0"><%= t(".title") %></legend>
+      <p><%= t(".description") %></p>
+
+      <div class="mv3">
+        <%= form.label :password, class: "db fw6 lh-copy f6" %>
+        <%= form.password_field :password, class: "b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" %>
+      </div>
+
+    <div class="submit-field">
+      <%= form.submit "Save Password", class: "b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" %>
+    </div>
+  <% end %>
+</div>

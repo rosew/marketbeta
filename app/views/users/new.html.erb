@@ -1,0 +1,16 @@
+<div id="clearance" class="sign-up">
+
+  <%= form_for @user, html: {class: 'measure center'} do |form| %>
+    <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+      <legend class="f4 fw6 ph0 mh0"><%= t(".title") %></legend>
+          
+      <%= render partial: '/users/form', object: form %>
+
+    </fieldset>
+
+    <div class="submit-field">
+      <%= form.submit "Sign Up", class: "b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" %>
+    </div>
+
+  <% end %>
+</div>
