@@ -12,11 +12,12 @@
   <body class="w-100 sans-serif bg-white">
 
     <nav class="dt w-100 border-box pa2 ph5-ns">
-      <a class="dtc v-mid mid-gray link dim" href="http://www.parkside.io/" title="Home">
+      <a class="dtc v-mid mid-gray link dim" href="/" title="Home">
         <%= image_tag "logo.jpg", class: "dib h3", alt: "Site Name" %>
       </a>
       <div class="dtc v-mid w-75 tr">
         <% if signed_in? %>
+          <%= link_to 'Password', new_password_path, class: "link dim dark-gray f6 f5-ns dib mr3 mr4-ns" %>
           <%= link_to 'Sign Out', sign_out_path, method: :delete, class: "link dim dark-gray f6 f5-ns dib" %>
         <% else %>
           <%= link_to 'Sign Up', sign_up_path, class: "link dim dark-gray f6 f5-ns dib mr3 mr4-ns" %>
@@ -25,7 +26,7 @@
       </div>
     </nav>
 
-    <div class="pa3 pa4-ns bt b--black-10 black-70 bg-white">
+    <div class="pa3 pa4-ns bt bb b--black-10 black-70 bg-white">
 
       <% flash.each do |key, value| %>
         <div class="flex items-center justify-center pa2 mb3 bg-light-gray navy">
@@ -35,5 +36,15 @@
 
       <%= yield %>
     </div>
+
+    <footer class="pv4 ph3 ph5-m ph6-l mid-gray">
+      <small class="f6 db tc">© 2017 <b class="ttu">
+        <a class="dtc mid-gray link dim" href="http://www.parkside.io/" title="Home">Park Side Software, LLC</a></b>., All Rights Reserved</small>
+      <div class="tc mt3">
+        <%= link_to "Terms of Use", "", title: "Terms", class: "f6 dib ph2 link mid-gray dim" %>
+        <%= link_to "Privacy", "", title: "Privacy", class: "f6 dib ph2 link mid-gray dim" %>
+      </div>
+    </footer>
+
   </body>
 </html>

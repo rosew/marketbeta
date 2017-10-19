@@ -31,6 +31,7 @@ To request paid support or development please contact [Parkside Software, LLC](h
 ## Setup and Customization
 
 - Replace app/assets/images/logo.jpg with your logo.
+- Edit the Copyright line in app/views/layouts/application.html.erb
 
 ## Launch on heroku / production
 
