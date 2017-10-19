@@ -8,4 +8,7 @@ Rails.application.routes.draw do
     root to: "clearance/users#new"
   end
 
+  # Add support for static pages
+  get "/pages/:page" => "pages#show"
+
 end
