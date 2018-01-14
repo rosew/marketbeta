@@ -1,9 +1,19 @@
 <div class="mt3">
    <%= form.label :email, class: "db fw6 lh-copy f6" %>
    <%= form.text_field :email, type: 'email', class: "pa2 input-reset ba bg-transparent w-100" %>
+   <span class="red"><%= @user.errors[:email].join(", ") if @user.errors[:email].present? %></span>
 </div>
 
 <div class="mv3">
   <%= form.label :password, class: "db fw6 lh-copy f6" %>
   <%= form.password_field :password, class: "b pa2 input-reset ba bg-transparent w-100" %>
+  <span class="red"><%= @user.errors[:password].join(", ") if @user.errors[:password].present? %></span>
+</div>
+
+<div class="mv3">
+  <label class="pa0 ma0 lh-copy f6 pointer">
+    <%= form.check_box :terms %>
+    Check here to verify that you have read the <%= link_to "Terms of Use", "/pages/terms", title: "Terms", class: "link black bold dim" %> and <%= link_to "Privacy Practices", "/pages/privacy", title: "Privacy", class: "link black bold dim" %> and are over 12 years of age.
+    <span class="red"><%= @user.errors[:terms].join(", ") if @user.errors[:terms].present? %></span>
+  </label>
 </div>
