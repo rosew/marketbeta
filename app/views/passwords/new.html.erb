@@ -1,13 +1,13 @@
 <div id="clearance" class="password-reset">
 
-  <%= form_for :password, url: passwords_path, html: {class: 'measure center'} do |form| %>
+  <%= form_for :password, url: passwords_path, html: {class: 'measure center mv5'} do |form| %>
     <fieldset id="password_reset" class="ba b--transparent ph0 mh0">
        <legend class="f4 fw6 ph0 mh0"><%= t(".title") %></legend>
        <p><%= t(".description") %></p>
 
        <div class="mv3">
          <%= form.label :email, class: "db fw6 lh-copy f6" %>
-         <%= form.text_field :email, type: 'email', class: "b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" %>
+         <%= form.text_field :email, type: 'email', class: "b pa2 input-reset ba bg-transparent w-100" %>
        </div>
 
     </fieldset>
