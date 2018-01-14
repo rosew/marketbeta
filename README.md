@@ -32,7 +32,7 @@ To request paid support or development please contact [Parkside Software, LLC](h
 
 - Replace app/assets/images/logo.jpg with your logo.
 - Edit the Copyright line in app/views/layouts/application.html.erb
-- Edit the content in app/views/pages/*
+- Edit the content in app/views/pages/* ( For help [designing a privacy policy](https://www.bbb.org/reno/for-businesses/sample-privacy-policy/) )
 - Make any design changes using http://tachyons.io/
 
 ## Launch on heroku / production
