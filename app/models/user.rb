@@ -11,6 +11,7 @@ class User < ApplicationRecord
   }
 
   validate :clicked_terms, :on => :create
+  validates :username, presence: true, length: { minimum: 4 }, uniqueness: { case_sensitive: false }
 
   private
 

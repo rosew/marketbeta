@@ -5,6 +5,12 @@
 </div>
 
 <div class="mv3">
+  <%= form.label :username, class: "db fw6 lh-copy f6" %>
+  <%= form.text_field :username, class: "b pa2 input-reset ba bg-transparent w-100" %>
+  <span class="red"><%= @user.errors[:username].join(", ") if @user.errors[:username].present? %></span>
+</div>
+
+<div class="mv3">
   <%= form.label :password, class: "db fw6 lh-copy f6" %>
   <%= form.password_field :password, class: "b pa2 input-reset ba bg-transparent w-100" %>
   <span class="red"><%= @user.errors[:password].join(", ") if @user.errors[:password].present? %></span>
