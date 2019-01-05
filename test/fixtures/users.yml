@@ -1,0 +1,10 @@
+
+one:
+  email: user1@wiegley.com
+  encrypted_password: password
+  remember_token: remember
+
+two:
+  email: user2@wiegley.com
+  encrypted_password: password
+  remember_token: remember
